@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="w-full  bg-gradient-to-r from-yellow-600 via-blue-600 to-yellow-600">
+   <div class="flex">
+      <div class="w-1/3 bg-white border rounded-md px-6  mt-11 pt-11  mx-auto">
+         <h1 class="text-4xl pb-8 px-4">Apply for Student</h1>
+      <form action="" method="post"  enctype="multipart/form-data">
+      {%csrf_token %}
+      {{ form }}
+      <input type="submit" class="bg-green-500 rounded-md px-3 py-2 text-white">
+      
+   </form>
+      </div>
+   </div>
+</div>
+{% endblock %}
+{% block 'title' %}Apply for Admission{%  endblock %}

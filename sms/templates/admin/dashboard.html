@@ -1,0 +1,26 @@
+{% extends 'admin/adminBase.html' %}
+
+{% block 'admin-content' %}
+<div class="flex gap-10 mt-5 px-8">
+    <div class="w-1/3">
+        <div class="w-full px-3 py-5 bg-red-500 text-white rounded-md">
+            <h1 class="text-3xl font-semibold">{{studentCount}}</h1>
+            <h2>Total Students</h2>
+        </div>
+    </div>
+    <div class="w-1/3">
+        <div class="w-full px-3 py-5 bg-cyan-500 text-white rounded-md">
+            <h1 class="text-3xl font-semibold">{{admissionCount}}</h1>
+            <h2>Total Admission</h2>
+        </div>
+    </div>
+    <div class="w-1/3">
+        <div class="w-full px-3 py-5 bg-blue-500 text-white rounded-md">
+            <h1 class="text-3xl font-semibold">{{paymentCount}}</h1>
+            <h2>Total Payment</h2>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'admin/adminBase.html' %}
+{% block 'admin-content' %}
+
+
+
+    
+        <div class="flex bg-lime-50 h-[90vh] w-full flex-col">
+            <div class="flex bg-rose-50 justify-center h-12 item-center ">
+                <h1 class="my-2 text-xl text-teal-800 font-semibold " >{{ title|upper}}</h1>
+            </div>
+           <div class="flex w-10/12">
+            <table class="border w-8/12 mt-1 mx-24 ">
+                <tr class="border">
+                    <th class="border px-5">Id</th>
+                    <th class="border px-5"> Class Name</th>
+                    <th class="border px-5">Action</th>
+                </tr>
+                {% for className in classes %}
+
+                <tr>
+                    <td class="border px-4 py-2">{{ className.id }}</td>
+                    <td class="border px-4 py-2">{{ className.className }}</td>
+                   
+                    <td class="border px-4">
+                        <a href="{% url 'deleteClasses' className.id %}" class=" border  text-sm hover:bg-red-700 bg-red-500 text-white px-1 py-1 rounded-lg">Delete</a>
+                        <a href="" class="border hover:bg-blue-700 text-sm bg-blue-500 text-white px-3 py-1 rounded-lg">Edit</a>
+                        <a href="{% url 'viewClassWise' className.className %}" class="border text-sm bg-green-500 text-white px-3 py-1 hover:bg-green-700 rounded-lg">View Student</a>
+                       
+                    </td>           
+                </tr>
+                {% endfor %}
+            </table>
+
+            <div class="w-4/12">
+                <h1 class="font-semibold text-3xl  my-3 flex-1">Insert Class Here</h1>
+                <form action="" method="post">
+
+                    {{ form }}
+                    {% csrf_token %}
+                    <input type="submit" class="text-xl bg-teal-500  hover:bg-teal-700 text-white rounded" value="Add Class">
+
+                </form>
+                <div class="flex">
+                    <img src="https://th.bing.com/th/id/R.fe37f790da5d0c9b1724cbdccbf9e0b7?rik=vIVMU%2be%2bf1fB0Q&riu=http%3a%2f%2fwww.aaascholarships.org%2fwp-content%2fuploads%2f2015%2f12%2fStudents-in-classroom.jpg&ehk=eCij%2b%2bBOsmz8czBO74F1E6nuDL9ZGTqW4UcOtzBY2wI%3d&risl=&pid=ImgRaw&r=0" alt="">
+                </div>
+            </div>
+           </div>
+        </div>
+    
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="flex">
+    <div class="w-2/12 h-[91vh] bg-slate-100">
+        <div class="flex  flex-col">
+            <a href="{% url 'manageStudent' %}" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">Dashboard</a>
+            <a href="{% url 'manageAdmission' %}" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Admission</a>
+            <a href="{% url 'manageStudent' %}" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Student</a>
+            <a href="" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Staffs</a>
+            <a href="" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Teachers</a>
+            <a href="{% url 'manageClasses' %}" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Classes</a>
+            <a href="" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Batchs </a>
+            <a href="" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Attendance </a>
+            <a href="" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">manage Payments </a>
+            <a href="" class="bg-slate-100 hover:bg-slate-200 px-2 py-3 w-full">Settings </a>
+
+
+
+
+        </div>
+    </div>
+    <div class="w-10/12">
+        {%block 'admin-content' %}{%endblock%}
+    </div>
+</div>
+
+{% endblock 'content' %}
